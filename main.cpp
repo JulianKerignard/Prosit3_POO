@@ -1,4 +1,6 @@
+#include "Polygone.h"
 #include <iostream>
+<<<<<<< Updated upstream
 #include <cmath>
 #include <vector>
 #include <stdexcept>
@@ -11,6 +13,10 @@ public:
     virtual void afficher() const = 0;
     virtual ~Polygone() = default;
 };
+=======
+#include <vector>
+#include "Cercle.h"
+>>>>>>> Stashed changes
 
 // Classe Cercle
 class Cercle : public Polygone {
@@ -96,6 +102,7 @@ public:
 
 // Fonction principale
 int main() {
+<<<<<<< Updated upstream
     Cercle cercle({0, 0}, 5);
     cercle.afficher();
     std::cout << "Aire: " << cercle.getAire() << std::endl;
@@ -110,6 +117,33 @@ int main() {
     triangle.afficher();
     std::cout << "Aire: " << triangle.getAire() << std::endl;
     std::cout << "Périmetre: " << triangle.getPerimetre() << std::endl << std::endl;
+=======
 
+        // Exemple Pour un rectangle avec bah 4 point logique
+        std::vector<std::pair<double, double>> rectangle = {{0, 0}, {4, 0}, {4, 3}, {0, 3}};
+        Polygone rectPolygone(rectangle);
+        rectPolygone.Afficher();
+        std::cout << "Perimetre: " << rectPolygone.GetPerimetre() << std::endl;
+        std::cout << "Aire: " << rectPolygone.GetAire() << std::endl << std::endl;
+
+        //pareil pour 3
+        std::vector<std::pair<double, double>> triangle = {{0, 0}, {4, 0}, {0, 3}};
+        Polygone triPolygone(triangle);
+        triPolygone.Afficher();
+        std::cout << "Perimetre: " << triPolygone.GetPerimetre() << std::endl;
+        std::cout << "Aire: " << triPolygone.GetAire() << std::endl << std::endl;
+>>>>>>> Stashed changes
+
+        //bon la ta capter
+        std::vector<std::pair<double, double>> pentagone = {{0, 0}, {2, 4}, {4, 3}, {5, 1}, {2, -1}}; //def d'un polygone de nom "pentagone" qui vas etre = aux paires de coor
+        Polygone pentPolygone(pentagone);
+        pentPolygone.Afficher();
+        std::cout << "Perimetre: " << pentPolygone.GetPerimetre() << std::endl;
+        std::cout << "Aire: " << pentPolygone.GetAire() << std::endl;
+
+    Cercle cercle({0, 0}, 5);
+    cercle.Afficher();
+    std::cout << "Aire: " << cercle.GetAire() << std::endl;
+    std::cout << "Perimetre: " << cercle.GetPerimetre() << std::endl << std::endl;
     return 0;
 }
